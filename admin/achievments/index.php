@@ -1,4 +1,15 @@
 <!-- MAIN -->
+
+
+<?php
+$con = mysqli_connect("localhost", "root", "root", "jajji") or die("Error occured (j1)");
+
+$sql = "SELECT * FROM articles";
+
+$result = mysqli_query($con,$sql);
+
+
+?>
 <link rel="stylesheet" href="stylef.css">
 <main>
 
@@ -13,52 +24,34 @@
             <table>
                 <thead>
                     <tr>
-                        <th>User</th>
-                        <th>Date Order</th>
-                        <th>Status</th>
+                        <th>#</th>
+                        <th> Image</th>
+                        <th>Title</th>
+                        <th> Message</th>
+                        <th>Article Owner</th>
+                        <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
+                    <?php while($row = mysqli_fetch_assoc($result)){?>
+    
+
+                        <td><p><?= $row["id"] ?></p></td>
+                        <td><p><?= $row["img"] ?></p></td>
+                        <td><p><?= $row["title"] ?></p></td>
+                        <td><p><?= $row["message"] ?></p></td>
+                        <td><p><?= $row["articleOwner"] ?></p></td>
+                       
                         <td>
-                            <img src="assets/img/people.png">
-                            <p>John Doe</p>
+                        <button style="background-color: green;"><a class="btn btn-succes" href=""> <ion-icon name = "eye-outline"></ion-icon></a></button>
+                        <button><a class="btn btn-primary" href=""> <ion-icon name = "create-outline"></ion-icon></a></button>
+                        <button style="background-color: #DA0C81;"><a class="btn btn-danger" href=""> <ion-icon name = "trash-outline"></ion-icon></a></button>
                         </td>
-                        <td>01-10-2021</td>
-                        <td><span class="status completed">Completed</span></td>
                     </tr>
-                    <tr>
-                        <td>
-                            <img src="assets/img/people.png">
-                            <p>John Doe</p>
-                        </td>
-                        <td>01-10-2021</td>
-                        <td><span class="status pending">Pending</span></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <img src="assets/img/people.png">
-                            <p>John Doe</p>
-                        </td>
-                        <td>01-10-2021</td>
-                        <td><span class="status process">Process</span></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <img src="assets/img/people.png">
-                            <p>John Doe</p>
-                        </td>
-                        <td>01-10-2021</td>
-                        <td><span class="status pending">Pending</span></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <img src="assets/img/people.png">
-                            <p>John Doe</p>
-                        </td>
-                        <td>01-10-2021</td>
-                        <td><span class="status completed">Completed</span></td>
-                    </tr>
+                <?php
+                }
+                ?>
                 </tbody>
             </table>
         </div>

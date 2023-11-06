@@ -1,21 +1,71 @@
 .jStart{
     display: flex;
-    justify-content: center;
-    padding: 20px ;
+    margin: 40px 20px;
+    background-color: #FFF;
+    border-radius: 20px;
+    padding: 50px 20px ;
     gap: 60px;
     
 }
 
-.formcard{
-    border: 1px solid;
-    padding: 0 100px ;
-    height: 300px;
+.jStart h1{
+    color: #A9A9A9;
+    font-size: 30px;
+    padding: 10px;
+    margin-bottom: 20px
+}
+
+.formcard div input{
+    width: 700px;
+    height: 40px;
+    
+}
+
+.formcard div select{
+    width: 500px;
+    height: 40px;
 }
 
 .formcard input{
     width: 200px;
     height: 25px;
     margin-bottom: 10px;
+}
+
+.formcard div p{
+    color: #B7B7B7;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.formcard span input{
+    border: none;
+    border-radius: 20px;
+    width: 150px;
+    height: 40px;
+    color: #FFF;
+    cursor: pointer;
+    background-color: #1C6DD0;
+}
+
+.formcard span input:hover{
+    background-color: #227C70;
+}
+
+.formcard button{
+    border: none;
+    border-radius: 20px;
+    width: 150px;
+    height: 40px;
+    color: #FFF;
+    cursor: pointer;
+    background-color: #227C70;
+    float: right;
+   
+}
+
+.formcard button:hover{
+    background-color: #1C6DD0;
 }
 
 button{
@@ -29,3 +79,15 @@ button{
 button a{
     color: white;
 }
+
+.action button:nth-child(1):hover{
+border: 1px solid red;
+}
+.action button:nth-child(2):hover{
+    border: 1px solid red;
+}
+.action button:nth-child(3):hover{
+    border: 1px solid red;
+}
+
+

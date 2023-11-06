@@ -1,16 +1,28 @@
 <link rel="stylesheet" href="stylef.css">
 
-<div class="jStart" style="margin: 30px 600px;">
-<div class="formcard">
-            <h1>Gallery</h1>
-            <form action="" method="post">
+<div class="jStart">
+    <div class="formcard">
+        <button><a href="?page=gallery/index">Back</a></button>
+        <h1>Add a new gallery</h1>
+        <form action="" method="post">
+            <div>
+                <p>Image:</p>
                 <input type="text" name="imgj3" placeholder="Enter the name of image"><br>
+            </div>
+            <div>
+                <p>Title:</p>
                 <input type="text" name="titlej3" placeholder="title"><br>
+            </div>
+            <div>
+                <p>Message:</p>
                 <input type="text" name="messagej3" placeholder="You can write smth here..."><br>
-                <input type="submit" name="j3" value="SEND">
-            </form>
-        </div>
-       </div>
+            </div>
+            <span><input type="submit" name="j3" value="SEND"></span>
+        </form>
+    </div>
+</div>
+
+
 
        <?php
         if (isset($_POST["j3"])) {
@@ -26,6 +38,7 @@
 
             if($resultJ3){
                 echo "Succesfully added";
+                header("location:?page=gallery/index");
             }else{
                 echo "Smth went wrong";
             }
