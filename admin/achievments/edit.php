@@ -57,7 +57,7 @@ if (isset($_POST["j1"])) {
     $resultJ1 = mysqli_query($con, $sqlJ1);
 
     if($resultJ1){
-        echo "Succesfully added";
+        echo "Succesfully edited";
         header("location:?page=achievments/index");
     }else{
         echo "Smth went wrong";

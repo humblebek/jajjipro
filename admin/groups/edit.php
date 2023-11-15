@@ -73,7 +73,7 @@ if (isset($_POST["j4"])) {
     $resultJ4 = mysqli_query($con, $sqlJ4);
 
     if ($resultJ4) {
-        echo "Succesfully added";
+        echo "Succesfully edited";
         header("location:?page=groups/index");
     } else {
         echo "Smth went wrong";
