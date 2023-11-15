@@ -4,6 +4,7 @@
 <?php
 $con = mysqli_connect("localhost", "root", "root", "jajji") or die("Error occured (j1)");
 
+
 $sql = "SELECT * FROM articles";
 
 $result = mysqli_query($con,$sql);
@@ -44,9 +45,9 @@ $result = mysqli_query($con,$sql);
                         <td><p><?= $row["articleOwner"] ?></p></td>
                        
                         <td>
-                        <button style="background-color: green;"><a class="btn btn-succes" href=""> <ion-icon name = "eye-outline"></ion-icon></a></button>
-                        <button><a class="btn btn-primary" href=""> <ion-icon name = "create-outline"></ion-icon></a></button>
-                        <button style="background-color: #DA0C81;"><a class="btn btn-danger" href=""> <ion-icon name = "trash-outline"></ion-icon></a></button>
+                        <button style="background-color: green;"><a class="btn btn-succes" href="?page=achievments/show&&id=<?php echo $row['id']?>"> <ion-icon name = "eye-outline"></ion-icon></a></button>
+                        <button><a class="btn btn-primary" href="?page=achievments/edit&&id=<?php echo $row['id']?>"> <ion-icon name = "create-outline"></ion-icon></a></button>
+                        <button style="background-color: #DA0C81;"><a class="btn btn-danger" href="?page=achievments/delete&&id=<?=$row['id'];?>"> <ion-icon name = "trash-outline"></ion-icon></a></button>
                         </td>
                     </tr>
                 <?php

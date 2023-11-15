@@ -68,9 +68,9 @@ $result = mysqli_query($con, $sql);
 
 
                             <td>
-                                <button style="background-color: green;"><a class="btn btn-succes" href=""> <ion-icon name="eye-outline"></ion-icon></a></button>
-                                <button><a class="btn btn-primary" href=""> <ion-icon name="create-outline"></ion-icon></a></button>
-                                <button style="background-color: #DA0C81;"><a class="btn btn-danger" href=""> <ion-icon name="trash-outline"></ion-icon></a></button>
+                                <button style="background-color: green;"><a class="btn btn-succes" href="?page=teachers/show&&id=<?=$row['id']?>;"> <ion-icon name="eye-outline"></ion-icon></a></button>
+                                <button><a class="btn btn-primary" href="?page=teachers/edit&&id=<?=$row['id']?>;"> <ion-icon name="create-outline"></ion-icon></a></button>
+                                <button style="background-color: #DA0C81;"><a class="btn btn-danger" href="?page=teachers/delete&&id=<?=$row['id']?>;"> <ion-icon name="trash-outline"></ion-icon></a></button>
                             </td>
                     </tr>
                 <?php

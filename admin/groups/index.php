@@ -7,9 +7,6 @@ $sql = "SELECT * FROM `group`";
 
 $result = mysqli_query($con, $sql);
 
-// while($row = mysqli_fetch_assoc($result)) {
-//     echo "id: " . $row["id"]. " - Name: " . $row["img"]. "Image" . $row["title"]. "<br>";
-//   }
 
 ?>
 
@@ -72,9 +69,9 @@ $result = mysqli_query($con, $sql);
                                 <p><?php echo $row["tutionFee"] ?></p>
                             </td>
                             <td class="action">
-                                <button style="background-color: green;"><a class="btn btn-succes" href=""> <ion-icon name="eye-outline"></ion-icon></a></button>
-                                <button><a class="btn btn-primary" href=""> <ion-icon name="create-outline"></ion-icon></a></button>
-                                <button style="background-color: #DA0C81;"><a class="btn btn-danger" href=""> <ion-icon name="trash-outline"></ion-icon></a></button>
+                                <button style="background-color: green;"><a class="btn btn-succes" href="?page=groups/show&&id=<?php echo $row['id']?>"> <ion-icon name="eye-outline"></ion-icon></a></button>
+                                <button><a class="btn btn-primary" href="?page=groups/edit&&id=<?php echo $row['id']?>"> <ion-icon name="create-outline"></ion-icon></a></button>
+                                <button style="background-color: #DA0C81;"><a class="btn btn-danger" href="?page=groups/delete&&id=<?=$row['id'];?>"> <ion-icon name="trash-outline"></ion-icon></a></button>
                             </td>
                         </tr>
                     <?php
