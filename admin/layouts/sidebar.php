@@ -5,7 +5,7 @@
 		</a>
 		<ul class="side-menu top">
 			<li class="active">
-				<a href="?page=dashboard/index">
+				<a href="?page=main">
 					<i class='bx bxs-dashboard' ></i>
 					<span class="text">Dashboard</span>
 				</a>
@@ -34,16 +34,17 @@
 					<span class="text">Gallery</span>
 				</a>
 			</li>
+			
 		</ul>
 		<ul class="side-menu">
 			<li>
-				<a href="#">
-					<i class='bx bxs-cog' ></i>
-					<span class="text">Settings</span>
+				<a href="log/login.php">
+					<i class='bx bxs-log-in-circle' style="color: green;"></i>
+					<span style="color: green;" class="text" >login</span>
 				</a>
 			</li>
 			<li>
-				<a href="#" class="logout">
+				<a href="log/logout.php" class="logout">
 					<i class='bx bxs-log-out-circle' ></i>
 					<span class="text">Logout</span>
 				</a>

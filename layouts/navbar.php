@@ -6,5 +6,5 @@
                     <a href="?page=wins" class="nav-item nav-link ">Yutuqlar</a>
                     <a href="?page=gallery" class="nav-item nav-link">Galereya</a>
                     <a href="?page=blogs" class="nav-item nav-link">Maqolalar</a>
-                    <a href="?page=contact" class="nav-item nav-link">Aloqa</a>
+                    <!-- <a href="?page=contact" class="nav-item nav-link">Aloqa</a> -->
                 </div>

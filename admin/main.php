@@ -1,8 +1,9 @@
+
 <!-- MAIN -->
 <main>
     <div class="head-title">
         <div class="left">
-            <h1>Dashboard</h1>
+            <h1>hi <span>admin</span> </h1>
             <ul class="breadcrumb">
                 <li>
                     <a href="#">Dashboard</a>
@@ -13,9 +14,9 @@
                 </li>
             </ul>
         </div>
-        <a href="#" class="btn-download">
+        <a href="log/register.php" class="btn-download">
             <i class='bx bxs-cloud-download'></i>
-            <span class="text">Download PDF</span>
+            <span class="text">Register</span>
         </a>
     </div>
 
@@ -134,5 +135,6 @@
         </div>
     </div>
 </main>
+
 
 <!-- MAIN -->

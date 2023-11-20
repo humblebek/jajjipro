@@ -44,10 +44,6 @@
     </div>
     <!-- Team End -->
 
-    <!-- Testimonial Start -->
-    <?php include("sections/comments.php"); ?>
-    <!-- Testimonial End -->
-
     <!-- Blog Start -->
     <?php include("sections/blogs.php"); ?>
     <!-- Blog End -->
