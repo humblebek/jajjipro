@@ -19,6 +19,22 @@
     padding-bottom: 60px;
     background: #eee;
  }
+ .form-container form span{
+   border: none;
+    border-radius: 20px;
+    width: 150px;
+    height: 40px;
+    color: #FFF;
+    cursor: pointer;
+    background-color: #227C70;
+    float: right;
+   
+}
+
+.form-container button:hover{
+    background-color: #1C6DD0;
+}
+
  
  .form-container form{
     padding:20px;
@@ -69,9 +85,7 @@
     color:#333;
  }
  
- .form-container form p a{
-    color:crimson;
- }
+ 
  
  .form-container form .error-msg{
     margin:10px 0;

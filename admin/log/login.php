@@ -1,5 +1,9 @@
 
  <?php
+ session_start();
+if(isset($_SESSION['started'])){
+    header("location: ../index.php");
+}
 $con = mysqli_connect("localhost", "root", "root", "jajji") or die("Error occurred");
 
 if (isset($_POST['submit'])) {
@@ -8,20 +12,21 @@ if (isset($_POST['submit'])) {
     $password = $_POST['password'];
     
     
-    $select = "SELECT * FROM user_db WHERE email = '$email' AND password = '$password'";
-    $result = mysqli_query($con, $select);
+    $select = "SELECT * FROM user_db ";
+     $result = mysqli_query($con, $select);
+    while($row= mysqli_fetch_assoc($result)){
+        if($email==$row['email'] && $password==$row['password']){
+            $_SESSION['started'] = true;
 
-    if (mysqli_num_rows($result) > 0) {
-        $row = mysqli_fetch_array($result);
-        if ($row['user_type'] == 'sadmin') {
-            $_SESSION['sadmin_name'] = $row['name'];
-            header('location: ../index.php');
-        } elseif ($row['user_type'] == 'admin') {
-            $_SESSION['admin_name'] = $row['name'];
-            header('location: ../admin2/index.php');
+            if($row['user_type']=='sadmin'){
+                $_SESSION['admin_type'] = 1;
+                 header('location: ../index.php');
+            }elseif($row['user_type']=='admin'){
+                $_SESSION['admin_type'] =0;
+                 header('location: ../index.php');
+            
+            }
         }
-    } else {
-        $error[] = 'Incorrect email or password!';
     }
 
 
@@ -57,7 +62,6 @@ if (isset($_POST['submit'])) {
    <input type="email" name="email" required placeholder="enter your email">
    <input type="password" name="password" required placeholder="enter your password">
    <input type="submit" name="submit" value="login now" class="form-btn">
-   <p>don't have an account? <a href="register.php">register now</a></p>
 </form>
 
 </div>

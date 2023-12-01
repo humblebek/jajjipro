@@ -4,7 +4,7 @@ $con = mysqli_connect("localhost", "root", "root", "jajji") or die("Error occure
 
 $id = $_GET['id'];
 
-$sql = "SELECT * FROM articles WHERE id=" . $id;
+$sql = "SELECT * FROM `facilities` WHERE id=" . $id;
 
 $result = mysqli_query($con, $sql);
 
@@ -21,7 +21,7 @@ $row = (mysqli_fetch_assoc($result));
 $con = mysqli_connect("localhost", "root", "root", "jajji") or die("Error occured (j1)");
 
 
-$sql = "SELECT * FROM articles";
+$sql = "SELECT * FROM `facilities`";
 
 $result = mysqli_query($con, $sql);
 
@@ -51,10 +51,7 @@ $result = mysqli_query($con, $sql);
                     <th>Message:</th>
                     <td><?php echo $row['message'] ?></td>
                 </tr>
-                <tr>
-                    <th>Article Owner:</th>
-                    <td><?php echo $row['articleOwner'] ?></td>
-                </tr>
+                
 
             </table>
         </div>

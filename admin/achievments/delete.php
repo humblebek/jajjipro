@@ -1,11 +1,9 @@
-
-
- <?php
+<?php
 $con = mysqli_connect("localhost", "root", "root", "jajji") or die("Error occurred");
 
 $id = $_GET["id"];
 
-$sql = "DELETE FROM articles WHERE id = ".$id;
+$sql = "DELETE FROM facilities WHERE id = ".$id;
 
 $result = mysqli_query($con, $sql);
 
@@ -17,4 +15,3 @@ if ($result) {
 }
 
 ?>
-

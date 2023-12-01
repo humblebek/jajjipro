@@ -1,11 +1,12 @@
 
+
 <?php
 
 $con = mysqli_connect("localhost", "root", "root", "jajji") or die("Error occured (j1)");
 
 $id = $_GET['id'];
 
-$sql = "SELECT * FROM articles WHERE id=".$id;
+$sql = "SELECT * FROM `facilities` WHERE id=".$id;
 
 $result = mysqli_query($con,$sql);
 
@@ -14,54 +15,49 @@ $row = (mysqli_fetch_assoc($result));
 
 ?>
 
+
 <link rel="stylesheet" href="stylef.css">
+
 <div class="jStart">
     <div class="formcard">
         <button><a href="?page=achievments/index">Back</a></button>
-        <h1>Edit achievments</h1>
+        <h1>Edit gallery</h1>
         <form action="" method="post">
             <div>
                 <p>Image:</p>
-                <input type="text" name="imgj1" value="<?php echo $row['img']?>"><br>
+                <input type="text" name="imgj3" value="<?php echo $row['img']?>"><br>
             </div>
             <div>
                 <p>Title:</p>
-                <input type="text" name="titlej1" value="<?php echo $row['title']?>" ><br>
+                <input type="text" name="titlej3" value="<?php echo $row['title']?>"><br>
             </div>
             <div>
                 <p>Message:</p>
-                <input type="text" name="messagej1" value="<?php echo $row['message']?>" ><br>
+                <input type="text" name="messagej3" value="<?php echo $row['message']?>"><br>
             </div>
-            <div>
-                <p>Article Owner:</p>
-                <input type="text" name="artown" value="<?php echo $row['articleOwner']?>" ><br>
-            </div>
-            <span><input type="submit" name="j1" value="SEND"></span>
+            <span><input type="submit" name="j3" value="SEND"></span>
         </form>
     </div>
 </div>
 
 
+
        <?php
-if (isset($_POST["j1"])) {
+        if (isset($_POST["j3"])) {
+            $con = mysqli_connect("localhost", "root", "root", "jajji") or die("Error occured (j3)");
 
-    $con = mysqli_connect("localhost", "root", "root", "jajji") or die("Error occured (j1)");
+            $imgJ3 = $_POST["imgj3"];
+            $titleJ3 = $_POST["titlej3"];
+            $messageJ3 = $_POST["messagej3"];
 
-    $imgJ1 = $_POST["imgj1"];
-    $titleJ1 = $_POST["titlej1"];
-    $messageJ1 = $_POST["messagej1"];
-    $artownJ1 = $_POST["artown"];
+            $sqlJ3 = "UPDATE `facilities` SET `img`='$imgJ3',`title`='$titleJ3',`message`='$messageJ3'  WHERE id=$id";
+            $resultJ3 = mysqli_query($con, $sqlJ3);
 
-    $sqlJ1 = "UPDATE `articles` SET `img`='$imgJ1',`title`='$titleJ1',`message`='$messageJ1',`articleOwner`='$artownJ1'  WHERE id=$id";
-
-    $resultJ1 = mysqli_query($con, $sqlJ1);
-
-    if($resultJ1){
-        echo "Succesfully edited";
-        header("location:?page=achievments/index");
-    }else{
-        echo "Smth went wrong";
-    }
-}
-
-?>
+            if($resultJ3){
+                echo "Succesfully edited";
+                header("location:?page=achievments/index");
+            }else{
+                echo "Smth went wrong";
+            }
+        }
+        ?>

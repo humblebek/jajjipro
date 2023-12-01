@@ -1,13 +1,12 @@
 <!-- MAIN -->
 
-
 <?php
-$con = mysqli_connect("localhost", "root", "root", "jajji") or die("Error occured (j1)");
+ $con = mysqli_connect("localhost", "root", "root", "jajji") or die("Error occured (j3)");
 
-
-$sql = "SELECT * FROM articles";
+ $sql = "SELECT * FROM facilities";
 
 $result = mysqli_query($con,$sql);
+
 
 
 ?>
@@ -26,10 +25,9 @@ $result = mysqli_query($con,$sql);
                 <thead>
                     <tr>
                         <th>#</th>
-                        <th> Image</th>
+                        <th>Image</th>
                         <th>Title</th>
-                        <th> Message</th>
-                        <th>Article Owner</th>
+                        <th>Message</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
@@ -42,12 +40,11 @@ $result = mysqli_query($con,$sql);
                         <td><p><?= $row["img"] ?></p></td>
                         <td><p><?= $row["title"] ?></p></td>
                         <td><p><?= $row["message"] ?></p></td>
-                        <td><p><?= $row["articleOwner"] ?></p></td>
-                       
+                        
                         <td>
-                        <button style="background-color: green;"><a class="btn btn-succes" href="?page=achievments/show&&id=<?php echo $row['id']?>"> <ion-icon name = "eye-outline"></ion-icon></a></button>
-                        <button><a class="btn btn-primary" href="?page=achievments/edit&&id=<?php echo $row['id']?>"> <ion-icon name = "create-outline"></ion-icon></a></button>
-                        <button style="background-color: #DA0C81;"><a class="btn btn-danger" href="?page=achievments/delete&&id=<?=$row['id'];?>"> <ion-icon name = "trash-outline"></ion-icon></a></button>
+                        <button style="background-color: green;"><a class="btn btn-succes" href="?page=gallery/show&&id=<?=$row['id'];?>"> <ion-icon name = "eye-outline"></ion-icon></a></button>
+                        <button><a class="btn btn-primary" href="?page=gallery/edit&&id=<?=$row['id'];?>"> <ion-icon name = "create-outline"></ion-icon></a></button>
+                        <button style="background-color: #DA0C81;"><a class="btn btn-danger" href="?page=gallery/delete&&id=<?=$row['id'];?>"> <ion-icon name = "trash-outline"></ion-icon></a></button>
                         </td>
                     </tr>
                 <?php

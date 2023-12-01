@@ -1,5 +1,6 @@
 
-<!-- MAIN -->
+
+
 <main>
     <div class="head-title">
         <div class="left">
@@ -14,10 +15,7 @@
                 </li>
             </ul>
         </div>
-        <a href="log/register.php" class="btn-download">
-            <i class='bx bxs-cloud-download'></i>
-            <span class="text">Register</span>
-        </a>
+       
     </div>
 
     <ul class="box-info">

@@ -1,1 +1,0 @@
-<h1>Men oddiy adminman</h1>
